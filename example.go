@@ -1,7 +1,7 @@
 package testlib
 
 import (
-	"github.com/vmihailenco/msgpack/v4"
+	"github.com/vmihailenco/msgpack/v5"
 )
 
 type Person struct {
