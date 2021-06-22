@@ -1,13 +1,17 @@
 package testlib
 
+import (
+	"github.com/vmihailenco/msgpack/v4"
+)
+
 type Person struct {
-	Name string
-	Age  int32
+	Name string `msgpack:"name,omitempty"`
+	Age  int32  `msgpack:"age,omitempty"`
 }
 
-func GetPerson(name string, age int32) *Person {
-	return &Person{
+func GetPerson(name string, age int32) ([]byte, error) {
+	return msgpack.Marshal(&Person{
 		Name: name,
 		Age: age,
-	}
+	})
 }
